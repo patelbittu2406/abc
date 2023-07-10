@@ -3,21 +3,19 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../image/text.png";
 
-const Login = () => {
 
-  const navigate = useNavigate()
+const Login = () => {
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  
-
   const validation = () => {
-      if (!formData.email || formData.password.length < 7) return false
-      return true
-  }
+    if (!formData.email || formData.password.length < 7) return false;
+    return true;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,9 +25,9 @@ const Login = () => {
     }));
   };
 
-  const handleLogin = async ()=>{
+  const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/posts',formData );
+      const response = await axios.post('https://abc-9z6qj9c5x-patelbittu2406.vercel.app/api/posts',formData );
       if(response.status === 201){
         setTimeout(()=>{
           navigate('/home')
@@ -38,12 +36,12 @@ const Login = () => {
     } catch (err) {
       console.log(err);
     }
-  }
-  
+
+  };
+
   useEffect(() => {
-      validation()
-  }, [formData])
-  
+    validation();
+  }, [formData]);
 
   return (
     <div
@@ -109,7 +107,7 @@ const Login = () => {
         >
           Login
         </button>
-        <p style={{ fontSize: "12px",marginTop:'5px' }}>
+        <p style={{ fontSize: "12px", marginTop: "5px" }}>
           Forgot your login Details?{" "}
           <span style={{ fontWeight: "bold", color: "#0095f6" }}>
             Get help Logging
