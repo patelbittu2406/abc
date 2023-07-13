@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Logo from "../image/text.png";
 import { LoadingButton } from "@mui/lab";
 import { Dialog } from "@mui/material";
@@ -14,10 +14,10 @@ const Login = () => {
   const [open,setOpen] = useState(false)
   const [loading,setLoading] = useState(false)
 
-  const validation = () => {
-    if (!formData.email || formData.password.length < 7) return false;
-    return true;
-  };
+  // const validation = () => {
+  //   if (!formData.email || formData.password.length < 7) return false;
+  //   return true;
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,9 +49,9 @@ const Login = () => {
     setOpen(pre => !pre)
   }
 
-  useEffect(() => {
-    validation();
-  }, [formData]);
+  // useEffect(() => {
+  //   validation();
+  // }, [formData]);
 
 
 
