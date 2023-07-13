@@ -6,7 +6,6 @@ import { LoadingButton } from "@mui/lab";
 import { Dialog } from "@mui/material";
 
 const Login = () => {
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
