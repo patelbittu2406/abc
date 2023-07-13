@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Logo from "../image/text.png";
 import { LoadingButton } from "@mui/lab";
 import { Dialog } from "@mui/material";
@@ -12,7 +11,7 @@ const Login = () => {
     password: "",
   });
 
-  const [open,setOpen] = useState(true)
+  const [open,setOpen] = useState(false)
   const [loading,setLoading] = useState(false)
 
   const validation = () => {
@@ -84,7 +83,7 @@ borderRadius:'20px',
               color: "black",
               textTransform: "none",
               "&:hover": {
-                background: "#0095f6"
+                background: "white"
             }
               }}>
                 ok
